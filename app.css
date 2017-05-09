@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 750px;
+    margin-top: 5%;
+}
+
+.checkboxes {
+    height: 40px;
+    padding: 10px;
+    border: 1px solid black;
+    width: 20%;
+}
+
+.heading {
+    font-weight: bolder;
+}
+
+#main {
+    margin-top: 5%;
+    width: 100%;
+}
+
+.cell {
+    float: left;
+    padding: 25px;
+    text-align: center;
+    width: 20%;
+    border: 1px solid black;
+    margin-left: 0;
+    height: 70px;
+}
+
