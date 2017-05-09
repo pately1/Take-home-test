@@ -19,20 +19,21 @@
         <div class="cell" id="forecast" onclick="sort('forecast')">FORECAST</div>
         <div class="cell" id="best_case" onclick="sort('best_case')">BEST CASE</div>
         <div class="cell" id="monthly" onclick="sort('monthly_plan')">MONTHLY PLAN</div>
-        <div class="cell" id="commit" onclick="sort('commit')"> <div>COMMIT</div><span><img src="img.png" onclick="clickMe()"></span></div>
+        <div class="cell" id="commit"> <div class="drop_list" onclick="clickMe(); sort('commit')">COMMIT</div>
+            <div class="drop" id="drop">
+                <label>SELECTED FIELDS</label>
+                <hr>
+                <input type="checkbox" value="1" name="category" onchange="check()" checked>NAME <br>
+                <input type="checkbox" value="2" name="category" onchange="check()" checked>PLAN <br>
+                <input type="checkbox" value="3" name="category" onchange="check()" checked>FORECAST <br>
+                <input type="checkbox" value="4" name="category" onchange="check()" checked>BEST CASE <br>
+                <input type="checkbox" value="5" name="category" onchange="check()">MONTHLY PLAN <br>
+                <input type="checkbox" value="6" name="category" onchange="check()" checked>COMMIT <br>
+                <input type="checkbox" value="7" name="category" onchange="check()">COMMENTS <br>
+                <input type="button" value="APPLY" id="apply" disabled onclick="apply()">
+            </div>
+        </div>
         <div class="cell" id="comments" onclick="sort('comments')">COMMENTS</div>
-    </div>
-    <div class="drop" id="drop">
-        <label>SELECTED FIELDS</label>
-        <hr>
-        <input type="checkbox" value="1" name="category" onchange="check()" checked>NAME <br>
-        <input type="checkbox" value="2" name="category" onchange="check()" checked>PLAN <br>
-        <input type="checkbox" value="3" name="category" onchange="check()" checked>FORECAST <br>
-        <input type="checkbox" value="4" name="category" onchange="check()" checked>BEST CASE <br>
-        <input type="checkbox" value="5" name="category" onchange="check()">MONTHLY PLAN <br>
-        <input type="checkbox" value="6" name="category" onchange="check()" checked>COMMIT <br>
-        <input type="checkbox" value="7" name="category" onchange="check()">COMMENTS <br>
-        <input type="button" value="APPLY" id="apply" disabled onclick="test()">
     </div>
 </div>
 
