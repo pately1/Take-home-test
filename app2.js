@@ -117,6 +117,20 @@ function test() {
             title.style.display = "none";
         }
 
+        if (result.indexOf("7") != -1) {
+            var title = document.getElementById("comments");
+            title.style.display = "block";
+            var div7 = document.createElement("DIV");
+            div7.className = "cell";
+            div7.setAttribute("name", "div7");
+            div7.innerHTML = data[i].comments;
+            main.appendChild(div7);
+
+        } else {
+            var title = document.getElementById("comments");
+            title.style.display = "none";
+        }
+
         tab_body.appendChild(main);
     }
 }
@@ -189,4 +203,10 @@ function check() {
     }
     console.log(size);
     size > 5 ? btn.disabled = true : btn.disabled = false;
+}
+
+function apply() {
+    var drop = document.getElementById("drop");
+    drop.style.display = "none";
+    test();
 }
