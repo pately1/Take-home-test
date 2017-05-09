@@ -10,6 +10,8 @@ body {
     margin: 0;
 }
 
+
+
 .container {
     padding-right: 15px;
     padding-left: 15px;
@@ -45,3 +47,47 @@ body {
     height: 70px;
 }
 
+#monthly {
+    display: none;
+}
+
+#comments {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+img {
+    cursor: pointer;
+    margin-left: 90px;
+    height: 40px;
+    width: 40px;
+}
+
+.block {
+    display: block;
+}
+
+.drop {
+    position: absolute;
+    right: 320px;
+    bottom: 185px;
+    background-color: white;
+    clear: both;
+    padding: 10px;
+    width: 170px;
+    height: 250px;
+    border: 1px solid black;
+    z-index: 999;
+    display: none;
+}
+
+#tab-body {
+    clear: both;
+}
+
+.body-row {
+    clear: both;
+}
