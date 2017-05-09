@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="app.css">
+    <title>Aviso Take Home Test</title>
+</head>
+<body class="container">
+
+<div class="checkboxes">
+    <input type="radio" name="details" value="more" onclick="test()" checked>More
+    <input type="radio" name="details" value="less" onclick="test()">Less
+</div>
+
+<div id="main">
+    <div class="heading">
+        <div class="cell" onclick="sort('name')">NAME</div>
+        <div class="cell" onclick="sort('plan')">PLAN</div>
+        <div class="cell" onclick="sort('forecast')">FORECAST</div>
+        <div class="cell" onclick="sort('best_case')">BEST CASE</div>
+        <div class="cell" onclick="sort('commit')">COMMIT</div>
+    </div>
+</div>
+
+<script src="app2.js"></script>
+</body>
+</html>
