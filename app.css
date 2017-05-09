@@ -31,6 +31,9 @@ body {
 .heading {
     font-weight: bolder;
 }
+#drop {
+    font-weight: normal;
+}
 
 #main {
     margin-top: 5%;
@@ -70,10 +73,16 @@ img {
     display: block;
 }
 
+div.drop_list:after {
+    content: "▼";
+    position: relative;
+    right: -35px;
+    top: 40px;
+}
 .drop {
-    position: absolute;
-    right: 320px;
-    bottom: 185px;
+    position: relative;
+    right: 55px;
+    top: 30px;
     background-color: white;
     clear: both;
     padding: 10px;
@@ -81,7 +90,7 @@ img {
     height: 250px;
     border: 1px solid black;
     z-index: 999;
-    display: none;
+    /*display: none;*/
 }
 
 #tab-body {
