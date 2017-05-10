@@ -3,14 +3,8 @@
 }
 
 html {
-    font-family: sans-serif;
+    font-family: Calibri, Trebuchet, sans-serif;
 }
-
-body {
-    margin: 0;
-}
-
-
 
 .container {
     padding-right: 15px;
@@ -31,6 +25,11 @@ body {
 .heading {
     font-weight: bolder;
 }
+
+.color {
+    background-color: lightblue;
+}
+
 #drop {
     font-weight: normal;
 }
@@ -48,6 +47,7 @@ body {
     border: 1px solid black;
     margin-left: 0;
     height: 70px;
+    cursor: pointer;
 }
 
 #monthly {
@@ -58,43 +58,37 @@ body {
     display: none;
 }
 
-.hidden {
-    display: none;
-}
-
-img {
-    cursor: pointer;
-    margin-left: 90px;
-    height: 40px;
-    width: 40px;
-}
-
-.block {
-    display: block;
-}
-
 div.drop_list:after {
     content: "▼";
     position: relative;
     right: -35px;
-    top: 40px;
+    top: 30px;
 }
 .drop {
     position: relative;
-    right: 55px;
-    top: 30px;
+    right: 52px;
+    top: 24px;
     background-color: white;
+    text-align: left;
     clear: both;
     padding: 10px;
     width: 170px;
     height: 250px;
     border: 1px solid black;
     z-index: 999;
-    /*display: none;*/
+    display: none;
 }
 
-#tab-body {
-    clear: both;
+#apply {
+    width: 100%;
+    height: 40px;
+    background-color: #008CBA;
+    color: white;
+}
+
+input[type="button"]:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
 .body-row {

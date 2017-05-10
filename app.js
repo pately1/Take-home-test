@@ -101,6 +101,19 @@ function test() {
         }
 
         if (result.indexOf("6") != -1) {
+            var title = document.getElementById("comments");
+            title.style.display = "block";
+            var div7 = document.createElement("DIV");
+            div7.className = "cell";
+            div7.setAttribute("name", "div7");
+            div7.innerHTML = data[i].comments;
+            main.appendChild(div7);
+        } else {
+            var title = document.getElementById("comments");
+            title.style.display = "none";
+        }
+
+        if (result.indexOf("7") != -1) {
             var title = document.getElementById("commit");
             title.style.display = "block";
             var div6 = document.createElement("DIV");
@@ -114,20 +127,6 @@ function test() {
             main.appendChild(div6);
         } else {
             var title = document.getElementById("commit");
-            title.style.display = "none";
-        }
-
-        if (result.indexOf("7") != -1) {
-            var title = document.getElementById("comments");
-            title.style.display = "block";
-            var div7 = document.createElement("DIV");
-            div7.className = "cell";
-            div7.setAttribute("name", "div7");
-            div7.innerHTML = data[i].comments;
-            main.appendChild(div7);
-
-        } else {
-            var title = document.getElementById("comments");
             title.style.display = "none";
         }
 
