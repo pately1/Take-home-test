@@ -15,7 +15,7 @@
                 saveData(response);
             }
         };
-        xhttp.open("GET", "data.json");
+        xhttp.open("GET", "shared/data.json");
         xhttp.send();
     }   // Retrieve data from the JSON object.
 
