@@ -2,41 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="app.css">
     <title>Aviso Take Home Test</title>
 </head>
+
 <body class="container">
 
 <div class="checkboxes">
-    <input type="radio" name="details" value="more" onclick="test()" checked>More
-    <input type="radio" name="details" value="less" onclick="test()">Less
+    <input type="radio" name="details" value="more" onclick="drawTable()" checked>More
+    <input type="radio" name="details" value="less" onclick="drawTable()">Less
 </div>
 
 <div id="main">
     <div class="heading">
-        <div class="cell" id="name" onclick="sort('name')">NAME</div>
-        <div class="cell" id="plan" onclick="sort('plan')">PLAN</div>
-        <div class="cell" id="forecast" onclick="sort('forecast')">FORECAST</div>
-        <div class="cell" id="best_case" onclick="sort('best_case')">BEST CASE</div>
-        <div class="cell" id="monthly" onclick="sort('monthly_plan')">MONTHLY PLAN</div>
-        <div class="cell" id="commit"> <div class="drop_list" onclick="clickMe(); sort('commit')">COMMIT</div>
+        <div class="cell color" id="name" onclick="sort('name')">NAME</div>
+        <div class="cell color" id="plan" onclick="sort('plan')">PLAN</div>
+        <div class="cell color" id="forecast" onclick="sort('forecast')">FORECAST</div>
+        <div class="cell color" id="best_case" onclick="sort('best_case')">BEST CASE</div>
+        <div class="cell color" id="monthly" onclick="sort('monthly_plan')">MONTHLY PLAN</div>
+        <div class="cell color" id="comments" onclick="sort('comments')">COMMENTS</div>
+        <div class="cell color" id="commit"> <div class="drop_list" onclick="toggle(); sort('commit')">COMMIT</div>
             <div class="drop" id="drop">
                 <label>SELECTED FIELDS</label>
                 <hr>
-                <input type="checkbox" value="1" name="category" onchange="check()" checked>NAME <br>
-                <input type="checkbox" value="2" name="category" onchange="check()" checked>PLAN <br>
-                <input type="checkbox" value="3" name="category" onchange="check()" checked>FORECAST <br>
-                <input type="checkbox" value="4" name="category" onchange="check()" checked>BEST CASE <br>
-                <input type="checkbox" value="5" name="category" onchange="check()">MONTHLY PLAN <br>
-                <input type="checkbox" value="6" name="category" onchange="check()" checked>COMMIT <br>
-                <input type="checkbox" value="7" name="category" onchange="check()">COMMENTS <br>
+                <input type="checkbox" value="1" name="category" onchange="check()" checked>Name <br>
+                <input type="checkbox" value="2" name="category" onchange="check()" checked>Plan <br>
+                <input type="checkbox" value="3" name="category" onchange="check()" checked>Forecast <br>
+                <input type="checkbox" value="4" name="category" onchange="check()" checked>Best Case <br>
+                <input type="checkbox" value="5" name="category" onchange="check()">Monthly Plan <br>
+                <input type="checkbox" value="7" name="category" onchange="check()" checked>Commit <br>
+                <input type="checkbox" value="6" name="category" onchange="check()">Comments <br>
                 <input type="button" value="APPLY" id="apply" disabled onclick="apply()">
             </div>
         </div>
-        <div class="cell" id="comments" onclick="sort('comments')">COMMENTS</div>
     </div>
 </div>
 
-<script src="app2.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
