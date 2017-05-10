@@ -2,30 +2,48 @@
  * Created by Yash on 5/8/2017.
  */
 
-var data;
-var flag = true;
+var data;                   // Variable for holding JSON Data.
+var flag = true;            // Variable for controlling sorting in both ways.
 
-function test() {
+function loadData() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = JSON.parse(this.responseText);
+            saveData(data);
+        }
+    };
+    xhttp.open("GET", "data.json");
+    xhttp.send();
+}   // Retrieve data from the JSON object.
+
+loadData();                 // Initially, calling loadData() to get data from json file.
+
+function saveData(info) {
+    data = info;
+    drawTable();
+}   // Storing data to the variable data.
+
+function drawTable() {
     var test = document.getElementById("tab-body");
-    if (test){
-        test.parentNode.removeChild(test);
+    if (test){                                                   // Checks for the existence of element.
+        test.parentNode.removeChild(test);                       // Remove element to overcome repeating tables.
     }
-    var newElem = document.createElement("DIV");
+    var newElem = document.createElement("DIV");                // Create element that will hold our data.
     newElem.setAttribute("id", "tab-body");
     var parent = document.getElementById("main");
-    parent.appendChild(newElem);
+    parent.appendChild(newElem);                                // Appending newly created element to main.
 
-    var selected = document.getElementsByName("category");
-    var result = [];
+    var selected = document.getElementsByName("category");      // Checking for selected checkboxes.
+    var result = [];                                            // Contains list of selected checkboxes.
     for (var a = 0; a < selected.length; a++) {
         if (selected[a].checked) {
             result.push(selected[a].value);
         }
     }
-    console.log(result);
 
-    for (var i = 0; i < Object.keys(data).length; i++) {
-        var tab_body = document.getElementById("tab-body");
+    for (var i = 0; i < Object.keys(data).length; i++) {            //  Creating data elements based on Selection.
+        var tab_body = document.getElementById("tab-body");         // Getting element that will hold our data.
         var main = document.createElement("DIV");
         main.className = "body-row";
 
@@ -40,7 +58,7 @@ function test() {
         } else {
             var title = document.getElementById("name");
             title.style.display = "none";
-        }
+        }            // Conditions for showing data based on selection.
 
         if (result.indexOf("2") != -1) {
             var title = document.getElementById("plan");
@@ -130,17 +148,17 @@ function test() {
             title.style.display = "none";
         }
 
-        tab_body.appendChild(main);
+        tab_body.appendChild(main);                                 // Appending all the elements to tab_body.
     }
-}
+}       // Draw table structure from the data.
 
 function sort(name) {
     flag = !flag;
     if (name) {
         data.sort(predicateBy(name, flag));
-        test();
+        drawTable();
     }
-}
+}       // Pass data array for sorting.
 
 function predicateBy(prop, flag){
     if (flag) {
@@ -163,38 +181,17 @@ function predicateBy(prop, flag){
         }
     }
 
-}
+}   // Sort data array based on passed parameters.
 
-function clickMe() {
+function toggle() {
     var dropdown = document.getElementById("drop");
     dropdown.style.display = (dropdown.style.display == "inherit") ? "none" : "inherit";
-}
-
-function loadData(srt) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var data = JSON.parse(this.responseText);
-            saveData(data);
-        }
-    };
-    xhttp.open("GET", "data.json");
-    xhttp.send();
-}
-
-function saveData(dta) {
-    data = dta;
-    console.log(data);
-    test();
-}
-
-loadData();
+}       // For toggling drop down menu.
 
 function check() {
     var size = 0;
     var drops = document.getElementsByName("category");
     var btn = document.getElementById("apply");
-    // console.log(drops);
     for (var i = 0; i < drops.length; i++) {
        if (drops[i].checked) {
            size++;
@@ -202,10 +199,10 @@ function check() {
     }
     console.log(size);
     size > 5 ? btn.disabled = true : btn.disabled = false;
-}
+}       // Checking whether selected checkboxes are more than 5 or not.
 
 function apply() {
     var drop = document.getElementById("drop");
     drop.style.display = "none";
-    test();
-}
+    drawTable();
+}       // Function that is going to be called when clicking on Apply button of drop down.
